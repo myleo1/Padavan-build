@@ -64,7 +64,7 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SRELAY/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SMBD36/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_EAP_PEAP/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_SFTP/d' .config
+        #sed -i '/CONFIG_FIRMWARE_INCLUDE_SFTP/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENSSH/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_XUPNPD/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_FFMPEG_NEW/d' .config
@@ -79,7 +79,6 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_NANO/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_MTR/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SOCAT/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EC/d' .config
         ######################################################################
         #以下选项是定义你需要的功能（y=集成,n=忽略），重新写入到.config文件
         ######################################################################
@@ -122,9 +121,8 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_MTR=n" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_SOCAT=n" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_SRELAY=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_SFTP=n" >> .config
+        #echo "CONFIG_FIRMWARE_INCLUDE_SFTP=n" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_OPENSSH=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_OPENSSL_EC=y" >> .config
         #########################################################################################
         #自定义添加其它功能请参考源码configs/templates/目录下的config文件。按照上面的格式添加即可
         #格式如下：
