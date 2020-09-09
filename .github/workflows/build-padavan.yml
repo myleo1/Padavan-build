@@ -46,7 +46,7 @@ jobs:
         exit 1
         fi
         cp -f configs/templates/$TNAME.config .config
-        sed -i 's/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=n/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y/g' .config
+        #sed -i 's/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=n/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y/g' .config
         ################################################################################################
         #因不同型号配置功能不一样，所以先把配置项删除，如果你自己要添加其他的，也要写上删除这一条，切记！！！
         ################################################################################################
@@ -65,6 +65,7 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SMBD36/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_EAP_PEAP/d' .config
         #sed -i '/CONFIG_FIRMWARE_INCLUDE_SFTP/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EC/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENSSH/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_XUPNPD/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_FFMPEG_NEW/d' .config
@@ -123,6 +124,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_SRELAY=n" >> .config
         #echo "CONFIG_FIRMWARE_INCLUDE_SFTP=n" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_OPENSSH=n" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_OPENSSL_EC=n" >> .config
         #########################################################################################
         #自定义添加其它功能请参考源码configs/templates/目录下的config文件。按照上面的格式添加即可
         #格式如下：
