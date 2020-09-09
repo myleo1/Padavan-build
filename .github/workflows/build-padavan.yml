@@ -66,7 +66,6 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_EAP_PEAP/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SFTP/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENSSH/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EC/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_XUPNPD/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_FFMPEG_NEW/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_CURL/d' .config
@@ -124,7 +123,6 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_SRELAY=n" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_SFTP=n" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_OPENSSH=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_OPENSSL_EC=n" >> .config
         #########################################################################################
         #自定义添加其它功能请参考源码configs/templates/目录下的config文件。按照上面的格式添加即可
         #格式如下：
